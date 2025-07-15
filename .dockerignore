@@ -40,8 +40,7 @@ run-compose.sh
 run-ollama-docker.sh
 update_ollama_models.sh
 
-# Documentation files
-CHANGELOG.md
+# Documentation files (keep CHANGELOG.md as it's needed by the app)
 CODE_OF_CONDUCT.md
 CONTRIBUTOR_LICENSE_AGREEMENT
 INSTALLATION.md

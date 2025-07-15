@@ -1,0 +1,45 @@
+# HuggingFace Spaces optimized Dockerfile
+FROM node:18-alpine AS build
+
+WORKDIR /app
+
+# Install dependencies with memory optimization
+COPY package.json package-lock.json ./
+RUN npm ci --only=production
+
+# Copy source and build with memory limits
+COPY . .
+ENV NODE_OPTIONS="--max-old-space-size=2048"
+RUN npm run build
+
+# Python backend stage
+FROM python:3.11-slim-bookworm
+
+ENV ENV=prod \
+    PORT=7860 \
+    HOST=0.0.0.0
+
+WORKDIR /app/backend
+
+# Install system dependencies
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    git build-essential pandoc gcc netcat-openbsd curl jq \
+    ffmpeg libsm6 libxext6 && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install Python dependencies
+COPY ./backend/requirements.txt ./requirements.txt
+RUN pip3 install --no-cache-dir uv && \
+    pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu --no-cache-dir && \
+    uv pip install --system -r requirements.txt --no-cache-dir
+
+# Copy built frontend and backend
+COPY --from=build /app/build /app/build
+COPY --from=build /app/CHANGELOG.md /app/CHANGELOG.md
+COPY --from=build /app/package.json /app/package.json
+COPY ./backend .
+
+EXPOSE 7860
+
+CMD ["bash", "start.sh"]

@@ -1,0 +1,12 @@
+# Use the official Open WebUI pre-built image
+FROM ghcr.io/open-webui/open-webui:main
+
+# HuggingFace Spaces configuration
+ENV PORT=7860 \
+    HOST=0.0.0.0 \
+    ENV=prod
+
+EXPOSE 7860
+
+# Start the application
+CMD ["bash", "/app/backend/start.sh"]

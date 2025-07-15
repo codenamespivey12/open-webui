@@ -1,0 +1,45 @@
+# HuggingFace optimized dockerignore
+.github
+.DS_Store
+docs
+kubernetes
+node_modules
+/.svelte-kit
+/package
+.env
+.env.*
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+__pycache__
+.idea
+venv
+_old
+uploads
+.ipynb_checkpoints
+**/*.db
+_test
+backend/data/*
+
+# Additional exclusions for HF
+cypress/
+cypress.config.ts
+demo.gif
+contribution_stats.py
+*.md
+!README-hf.md
+
+# Large font files
+backend/open_webui/static/fonts/NotoSansSC-*.ttf
+backend/open_webui/static/fonts/NotoSansKR-*.ttf
+backend/open_webui/static/fonts/NotoSansJP-*.ttf
+
+# Development files
+docker-compose.*.yaml
+!docker-compose.yaml
+confirm_remove.sh
+run-compose.sh
+run-ollama-docker.sh
+update_ollama_models.sh
+fly.toml
+Dockerfile
+.dockerignore

@@ -68,20 +68,20 @@
 					<Marquee
 						duration={5000}
 						words={[
-							$i18n.t('Explore the cosmos'),
-							$i18n.t('Unlock mysteries'),
-							$i18n.t('Chart new frontiers'),
-							$i18n.t('Dive into knowledge'),
-							$i18n.t('Discover wonders'),
-							$i18n.t('Ignite curiosity'),
-							$i18n.t('Forge new paths'),
-							$i18n.t('Unravel secrets'),
-							$i18n.t('Pioneer insights'),
-							$i18n.t('Embark on adventures')
+							$i18n.t('Chlamydia is not a flower'),
+							$i18n.t('Crowded elevators smell different to midgets.'),
+							$i18n.t('Mojo Lives!'),
+							$i18n.t('Don\'t eat yellow snow'),
+							$i18n.t('We dance to all the wrong songs.'),
+							$i18n.t('This has nothing to do with AI'),
+							$i18n.t('Hobbits haunt the dreams of the eldery.'),
+							$i18n.t('Fuck'),
+							$i18n.t('(  .  ) Y (   .  )'),
+							$i18n.t('Your mom')
 						]}
 					/>
 
-					<div class="mt-0.5">{$i18n.t(`wherever you are`)}</div>
+					<div class="mt-0.5">{$i18n.t(`sixtyoneeighty`)}</div>
 				</div>
 
 				<div class="flex justify-center mt-8">

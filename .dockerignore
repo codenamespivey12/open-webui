@@ -18,3 +18,32 @@ uploads
 **/*.db
 _test
 backend/data/*
+
+# Test files and demo content
+cypress/
+cypress.config.ts
+demo.gif
+contribution_stats.py
+
+# Large font files (keep only essential ones)
+backend/open_webui/static/fonts/NotoSansSC-*.ttf
+backend/open_webui/static/fonts/NotoSansKR-*.ttf
+backend/open_webui/static/fonts/NotoSansJP-*.ttf
+
+# Development docker compose files
+docker-compose.*.yaml
+!docker-compose.yaml
+
+# Development scripts
+confirm_remove.sh
+run-compose.sh
+run-ollama-docker.sh
+update_ollama_models.sh
+
+# Documentation files
+CHANGELOG.md
+CODE_OF_CONDUCT.md
+CONTRIBUTOR_LICENSE_AGREEMENT
+INSTALLATION.md
+TROUBLESHOOTING.md
+README.md

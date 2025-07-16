@@ -4,7 +4,6 @@ emoji: 🐳
 colorFrom: purple
 colorTo: gray
 sdk: docker
-dockerfile: Dockerfile.hf-custom
 app_port: 7860
 hardware: cpu-basic
 ---

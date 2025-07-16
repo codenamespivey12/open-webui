@@ -1,5 +1,4 @@
 # HuggingFace Spaces Dockerfile using your custom image
-# Replace 'your-username' with your actual Docker Hub or GitHub username
 FROM sixtyoneeighty/open-webui-custom:latest
 
 # HuggingFace Spaces configuration

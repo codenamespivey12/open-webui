@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Build and push custom Open WebUI image
+# Build and push custom Open WebUI image to Docker Hub
 # Usage: ./build-custom-image.sh [your-dockerhub-username]
 
 set -e
 
 # Configuration
-DOCKER_USERNAME=${1:-"your-username"}
+DOCKER_USERNAME=${1:-"sixtyoneeighty"}
 IMAGE_NAME="open-webui-custom"
 TAG="latest"
 FULL_IMAGE_NAME="${DOCKER_USERNAME}/${IMAGE_NAME}:${TAG}"
@@ -32,9 +32,9 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     docker push ${FULL_IMAGE_NAME}
     
     echo "✅ Image pushed successfully!"
-    echo "🎉 Your custom image is available at: ${FULL_IMAGE_NAME}"
+    echo "🎉 Your custom image is available at: https://hub.docker.com/r/${FULL_IMAGE_NAME}"
     echo ""
-    echo "📋 To use in HuggingFace Spaces, create a Dockerfile with:"
+    echo "📋 Your HuggingFace Dockerfile is ready to use:"
     echo "FROM ${FULL_IMAGE_NAME}"
     echo "ENV PORT=7860"
     echo "ENV HOST=0.0.0.0"

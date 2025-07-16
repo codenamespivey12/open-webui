@@ -1,0 +1,19 @@
+# Simple custom build - start from official image and add customizations
+FROM ghcr.io/open-webui/open-webui:main
+
+# Copy your customized files over the defaults
+COPY --chown=0:0 src/lib/components/OnBoarding.svelte /app/src/lib/components/OnBoarding.svelte
+
+# Set custom environment variables
+ENV WEBUI_NAME="Open WebUI Custom" \
+    WEBUI_SECRET_KEY="" \
+    PORT=8080 \
+    HOST=0.0.0.0
+
+# For HuggingFace Spaces compatibility
+ENV PORT=7860
+
+EXPOSE 7860
+
+# Use the existing start script
+CMD ["bash", "/app/backend/start.sh"]

@@ -1,4 +1,4 @@
-# Use official Open WebUI image (guaranteed to work)
+# Temporary: Use official Open WebUI image (multi-platform)
 FROM ghcr.io/open-webui/open-webui:main
 
 # HuggingFace Spaces configuration
